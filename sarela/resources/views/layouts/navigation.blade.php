@@ -12,12 +12,20 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Página Inicial') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('financial-reports')" :active="request()->routeIs('financial-reports')">
-                        {{ __('Financeiro') }}
-                    </x-nav-link>
+
+                    @foreach ($navigationPages as $page)
+                        <x-nav-link 
+                            :href="route('reports.index', ['name' => $page->name])"
+                            :active="request()->routeIs('reports.index') && request()->route('name') === $page->name">
+                            {{ __($page->name) }}
+                        </x-nav-link>
+
+                    @endforeach
+
                     <x-nav-link :href="route('members')" :active="request()->routeIs('members')">
                         {{ __('Diretoria') }}
                     </x-nav-link>

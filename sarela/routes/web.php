@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\FinancialReportController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +26,9 @@ Route::get('/dashboard', [NewsController::class, 'index'])->middleware(['auth', 
 
 Route::get('/financial-reports', [FinancialReportController::class, 'index'])->middleware(['auth', 'verified'])->name('financial-reports');
 
-Route::get('/members', function () {
-    return view('members');
-})->middleware(['auth', 'verified'])->name('members');
+Route::get('/reports/{name}', [ReportController::class, 'index'])->name('reports.index');
+
+Route::get('/members', [MemberController::class, 'index'])->middleware(['auth', 'verified'])->name('members');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
