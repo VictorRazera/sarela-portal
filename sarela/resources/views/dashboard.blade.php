@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Bem-Vindo!') }}
         </h2>
     </x-slot>
@@ -22,18 +22,18 @@
             </div> -->
 
             <!-- Aba de Últimas Notícias -->
-            <div class="mt-2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 class="text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6 text-center py-2">Últimas Notícias</h3>
+            <div class="mt-2 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-3xl font-semibold text-gray-700 mb-6 text-center py-2">Últimas Notícias</h3>
 
                 <!-- Exibindo as notícias -->
                     @foreach($news as $item)
-                        <div class="border-b border-gray-300 dark:border-gray-700 py-4">
-                            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $item->title }}</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <div class="border-b border-gray-300 py-4">
+                            <h4 class="text-xl font-semibold text-gray-800">{{ $item->title }}</h4>
+                            <p class="text-sm text-gray-600 mb-2">
                                 Publicado em {{ \Carbon\Carbon::parse($item->created_at)->format('d/m/Y H:i') }}
                             </p>
 
-                            <p class="text-gray-600 dark:text-gray-300 mt-2">{!! nl2br(e($item->text)) !!}</p>
+                            <p class="text-gray-600 mt-2">{!! nl2br(e($item->text)) !!}</p>
                             <p class="text-gray-500 text-sm mt-2">
                         </div>
                     @endforeach
