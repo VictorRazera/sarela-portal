@@ -27,10 +27,10 @@
             <div class="relative md:absolute top-0 left-0 w-full h-full flex flex-col justify-center items-end pr-0 md:pr-10">
 
                 <!-- Div para o conteúdo que será o slot -->
-                <div class="w-full h-full flex flex-col justify-center items-center md:max-w-md px-6 py-10 md:py-4 bg-[#23402e] shadow-md overflow-hidden">
+                <div class="w-full h-full flex flex-col justify-center items-center md:max-w-md px-6 py-10 md:py-4 bg-[#d8f8fc] shadow-md overflow-hidden">
 
                     <a href="/" class="pb-6">
-                        <img src="{{ asset('images/logo-login.png') }}" class="w-25 h-20">
+                        <img src="{{ asset('images/sarela-logo.png') }}" class="w-25 h-20">
                     </a>
 
                     {{ $slot }}

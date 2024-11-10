@@ -4,7 +4,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900-100">
                     <!-- Seção Equipe -->
-                    <h3 class="text-4xl font-semibold text-gray-700 mb-6 text-center pb-10">Equipe</h3>
+                    <h3 class="text-4xl font-semibold text-gray-700 mb-6 text-center pb-10">Diretoria</h3>
                     
                     <!-- Lista de membros da equipe -->
                     <ul class="space-y-4">
